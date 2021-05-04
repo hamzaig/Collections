@@ -71,7 +71,7 @@ public class Theatre {
     }
 
     //implements Comparable<Seat>
-    public class Seat {
+    public class Seat implements Comparable<Seat>{
 
         private final String seatNumber;
         private boolean reserved = false;
@@ -80,11 +80,11 @@ public class Theatre {
             this.seatNumber = seatNumber;
         }
 
-//        @Override
-//        public int compareTo(Seat seat) {
-//            System.out.print(".");
-//            return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
-//        }
+        @Override
+        public int compareTo(Seat seat) {
+            System.out.print(".");
+            return this.seatNumber.compareToIgnoreCase(seat.getSeatNumber());
+        }
 
         public boolean reserve(){
             if(!this.reserved){

@@ -26,9 +26,9 @@ public class Main {
         System.out.println("Printing Theatre.seat Copy");
         printList(theatre.seats); //this is not shuffle
 
-
-
-
+        sortList(seatCopy);
+        System.out.println("Printing Sorted List");
+        printList(seatCopy);
     }
 
     public static void printList(List<Theatre.Seat> list){
@@ -37,5 +37,15 @@ public class Main {
         }
         System.out.println();
         System.out.println("========================================================================================");
+    }
+
+    public static void sortList(List<? extends Theatre.Seat> list){
+        for(int i=0; i<list.size()-1; i++){
+            for(int j=i+1; j<list.size(); j++){
+                if (list.get(i).compareTo(list.get(j)) > 0){
+                    Collections.swap(list,i,j);
+                }
+            }
+        }
     }
 }
